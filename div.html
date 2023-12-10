@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>&lt;div></title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="code-div">
+			<div class="container">
+				<div class="code-container">
+					<span>HTML</span>
+					<pre id="code-html"></pre>
+				</div>
+				<div class="code-container">
+					<span>CSS</span>
+					<pre id="code-css"></pre>
+				</div>
+			</div>
+			<button onclick="code_close();">Close</button>
+		</div>
+		<div id="header">
+			<div class="container">
+				<label for="input-main-background-color">body color:&nbsp;</label>
+				<input type="color" id="input-main-background-color" value="#ffffff" />
+			</div>
+			<div class="container">
+				<label for="input-selector">Custom selector</label>
+				<input type="text" id="input-selector" value="div" />
+			</div>
+			<div class="container">
+				<label for="transparent-background-color">transparent bg:&nbsp;</label>
+				<input type="checkbox" id="transparent-background-color" />
+			</div>
+			<div class="container">
+				<label for="input-background-color">background color:&nbsp;</label>
+				<input id="input-background-color" type="color" value="#ffffff" />
+			</div>
+			<div class="container">
+				<label for="input-margin">margin:&nbsp;</label>
+				<div>
+					<input id="input-margin" type="number" step="0.1" value="0" wheelstep="5" />
+					<select id="input-margin-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-padding">padding:&nbsp;</label>
+				<div>
+					<input id="input-padding" type="number" step="0.1" value="0" wheelstep="1" />
+					<select id="input-padding-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-width">width:&nbsp;</label>
+				<div>
+					<input id="input-width" type="number" min="0" step="0.1" value="75" wheelstep="5" />
+					<select id="input-width-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-height">height:&nbsp;</label>
+				<div>
+					<input id="input-height" type="number" min="0" step="0.1" value="75" wheelstep="5" />
+					<select id="input-height-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-display">display:&nbsp;</label>
+				<select id="input-display">
+					<option selected>block</option>
+					<option>contents</option>
+					<option>flex</option>
+					<option>flow-root</option>
+					<option>grid</option>
+					<option>inline</option>
+					<option>inline-block</option>
+					<option>inline-flex</option>
+					<option>inline-table</option>
+					<option>list-item</option>
+					<option>table</option>
+					<option>table-caption</option>
+					<option>table-cell</option>
+					<option>table-column</option>
+					<option>table-column-group</option>
+					<option>table-footer-group</option>
+					<option>table-header-group</option>
+					<option>table-row</option>
+					<option>table-row-group</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-opacity">opacity:&nbsp;</label>
+				<input type="number" id="input-opacity" min="0" max="1" step="0.01" wheelstep="0.1" value="1" />
+			</div>
+			<div class="container">
+				<label for="input-z-index">z index:&nbsp;</label>
+				<input id="input-z-index" type="number" min="-2147483647" max="2147483647" step="1" wheelstep="1" value="0" />
+			</div>
+		</div>
+		<div id="main">
+			<div id="object"></div>
+		</div>
+		<div id="aside1">
+			<div class="container">
+				<label for="input-innerHTML">text:&nbsp;</label>
+				<textarea id="input-innerHTML" rows="1">CSS &amp;lt;div> generator</textarea>
+			</div>
+			<div class="container"><label for="input-color">text color:&nbsp;</label><input id="input-color" type="color" value="#000000" /></div>
+			<div class="container">
+				<label for="input-font-family">font:&nbsp;</label>
+				<input type="text" id="input-font-family" value="Arial" />
+			</div>
+			<div class="container">
+				<label for="input-font-size">text size:&nbsp;</label>
+				<input id="input-font-size" type="number" min="0" step="0.1" value="12" wheelstep="0.5" />
+				<select id="input-font-size-unit">
+					<option selected>px</option>
+					<option>%</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>vw</option>
+					<option>vh</option>
+					<option>lvw</option>
+					<option>lvh</option>
+					<option>vb</option>
+					<option>vi</option>
+					<option>vmin</option>
+					<option>vmax</option>
+					<option>cm</option>
+					<option>mm</option>
+					<option>ch</option>
+					<option>in</option>
+					<option>pt</option>
+					<option>ex</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-letter-spacing">space between letters:&nbsp;</label>
+				<input id="input-letter-spacing" type="number" step="0.1" value="0" wheelstep="1" />
+				<select id="input-letter-spacing-unit">
+					<option selected>px</option>
+					<option>%</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>vw</option>
+					<option>vh</option>
+					<option>lvw</option>
+					<option>lvh</option>
+					<option>vb</option>
+					<option>vi</option>
+					<option>vmin</option>
+					<option>vmax</option>
+					<option>cm</option>
+					<option>mm</option>
+					<option>ch</option>
+					<option>in</option>
+					<option>pt</option>
+					<option>ex</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-text-align">text align: </label>
+				<select id="input-text-align">
+					<option>center</option>
+					<option>left</option>
+					<option>right</option>
+					<option>justify</option>
+					<option>start</option>
+					<option selected>unset</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-text-transform">text transformation:&nbsp;</label>
+				<select id="input-text-transform">
+					<option selected>none</option>
+					<option>capitalize</option>
+					<option>lowercase</option>
+					<option>uppercase</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-overflow">on overflow:&nbsp;</label>
+				<select id="input-overflow">
+					<option>auto</option>
+					<option>scroll</option>
+					<option>hidden</option>
+					<option selected>visible</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-text-decoration-color">text decoration color:&nbsp;</label>
+				<input type="color" id="input-text-decoration-color" value="#000000" />
+			</div>
+			<div class="container">
+				<label for="input-text-decoration-thickness">text decoration width:&nbsp;</label>
+				<div>
+					<input id="input-text-decoration-thickness" type="number" min="0" step="0.1" value="1" wheelstep="0.1" />
+					<select id="input-text-decoration-thickness-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-text-decoration-line">text decoration:&nbsp;</label>
+				<select id="input-text-decoration-line">
+					<option selected>none</option>
+					<option>overline</option>
+					<option>underline</option>
+				</select>
+			</div>
+			<div class="container"><label for="input-border-color">border color:&nbsp;</label><input id="input-border-color" type="color" value="#000000" /></div>
+			<div class="container">
+				<label for="input-border-width">border width:&nbsp;</label>
+				<div>
+					<input id="input-border-width" type="number" min="0" step="0.1" value="1" wheelstep="0.5" />
+					<select id="input-border-width-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-border-style">border type:&nbsp;</label>
+				<select id="input-border-style" aria-valuetext="solid">
+					<option selected>solid</option>
+					<option>dashed</option>
+					<option>dotted</option>
+					<option>double</option>
+					<option>groove</option>
+					<option>inset</option>
+					<option>none</option>
+					<option>outset</option>
+					<option>ridge</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-border-radius">border radius:&nbsp;</label>
+				<div>
+					<input id="input-border-radius" type="number" min="0" step="0.1" value="0" wheelstep="1" />
+					<select id="input-border-radius-unit">
+						<option>px</option>
+						<option selected>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-box-shadow1">shadow x:&nbsp;</label>
+				<input type="number" id="input-box-shadow1" value="0" step="0.5" wheelstep="1" />
+				<select id="input-box-shadow1-unit">
+					<option selected>px</option>
+					<option>%</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>vw</option>
+					<option>vh</option>
+					<option>lvw</option>
+					<option>lvh</option>
+					<option>vb</option>
+					<option>vi</option>
+					<option>vmin</option>
+					<option>vmax</option>
+					<option>cm</option>
+					<option>mm</option>
+					<option>ch</option>
+					<option>in</option>
+					<option>pt</option>
+					<option>ex</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-box-shadow2">shadow y:&nbsp;</label>
+				<input type="number" id="input-box-shadow2" value="0" step="0.5" wheelstep="1" />
+				<select id="input-box-shadow2-unit">
+					<option selected>px</option>
+					<option>%</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>vw</option>
+					<option>vh</option>
+					<option>lvw</option>
+					<option>lvh</option>
+					<option>vb</option>
+					<option>vi</option>
+					<option>vmin</option>
+					<option>vmax</option>
+					<option>cm</option>
+					<option>mm</option>
+					<option>ch</option>
+					<option>in</option>
+					<option>pt</option>
+					<option>ex</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-box-shadow3">shadow blurness:&nbsp;</label>
+				<input type="number" id="input-box-shadow3" min="0" value="0" step="0.5" wheelstep="1" />
+				<select id="input-box-shadow3-unit">
+					<option selected>px</option>
+					<option>%</option>
+					<option>em</option>
+					<option>rem</option>
+					<option>vw</option>
+					<option>vh</option>
+					<option>lvw</option>
+					<option>lvh</option>
+					<option>vb</option>
+					<option>vi</option>
+					<option>vmin</option>
+					<option>vmax</option>
+					<option>cm</option>
+					<option>mm</option>
+					<option>ch</option>
+					<option>in</option>
+					<option>pt</option>
+					<option>ex</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-box-shadow4">shadow color:&nbsp;</label>
+				<input type="color" id="input-box-shadow4" value="#000000" />
+			</div>
+		</div>
+		<div id="aside2">
+			<div class="container">
+				<label for="input-position">position:&nbsp;</label>
+				<select id="input-position">
+					<option selected>static</option>
+					<option>fixed</option>
+					<option>absolute</option>
+					<option>relative</option>
+					<option>flex</option>
+					<option>sticky</option>
+				</select>
+			</div>
+			<div class="container">
+				<label for="input-top">top:&nbsp;</label>
+				<div>
+					<input id="input-top" type="number" step="0.1" value="0" wheelstep="5" />
+					<select id="input-top-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-left">left:&nbsp;</label>
+				<div>
+					<input id="input-left" type="number" step="0.1" value="0" wheelstep="5" />
+					<select id="input-left-unit">
+						<option selected>px</option>
+						<option>%</option>
+						<option>em</option>
+						<option>rem</option>
+						<option>vw</option>
+						<option>vh</option>
+						<option>lvw</option>
+						<option>lvh</option>
+						<option>vb</option>
+						<option>vi</option>
+						<option>vmin</option>
+						<option>vmax</option>
+						<option>cm</option>
+						<option>mm</option>
+						<option>ch</option>
+						<option>in</option>
+						<option>pt</option>
+						<option>ex</option>
+					</select>
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-filter">filter:&nbsp;</label>
+				<div>
+					<select id="input-filter">
+						<option>blur</option>
+						<option>grayscale</option>
+						<option>saturate</option>
+						<option>hue-rotate</option>
+						<option>brightness</option>
+						<option>contrast</option>
+						<option>invert</option>
+						<option>opacity</option>
+						<option>sepia</option>
+						<option selected>none</option>
+					</select>
+					<input type="number" id="input-filter-value" value="0" step="0.5" wheelstep="5" />
+				</div>
+			</div>
+			<div class="container">
+				<label for="input-backdrop-filter">background filter:&nbsp;</label>
+				<div>
+					<select id="input-backdrop-filter">
+						<option>blur</option>
+						<option>grayscale</option>
+						<option>saturate</option>
+						<option>hue-rotate</option>
+						<option>brightness</option>
+						<option>contrast</option>
+						<option>invert</option>
+						<option>opacity</option>
+						<option>sepia</option>
+						<option selected>none</option>
+					</select>
+					<input type="number" id="input-backdrop-filter-value" value="0" step="0.5" wheelstep="5" />
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<div class="container">
+				<label for="input-additional">additional CSS:&nbsp;</label>
+				<textarea id="input-additional" placeholder="visibility: visible;"></textarea>
+			</div>
+			<button onclick="generate();">Generate code</button>
+		</div>
+
+		<script src="div.js"></script>
+	</body>
+</html>
